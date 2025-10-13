@@ -1,0 +1,12 @@
+const String googleIcon = "assets/google.png";
+const String profileIcon = "assets/account.png";
+const String errorIcon = "assets/error.png";
+const String requestIcon = "assets/user.png";
+const String sendRequestIcon = "assets/send.png";
+const String accountSettingsIcon = "assets/user-skill-gear.png";
+const String chatIcon = "assets/messages.png";
+const String notificationIcon = "assets/bells.png";
+const String waveIcon = "assets/waveform-path.png";
+const String vibrationIcon = "assets/vibrate.png";
+const String audioIcon = "assets/audio.png";
+const String albumIcon = "assets/icons/photos.png";

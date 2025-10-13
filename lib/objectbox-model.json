@@ -1,0 +1,312 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:218351699053391798",
+      "lastPropertyId": "23:7604792210188037937",
+      "name": "ChatStorageDBModel",
+      "properties": [
+        {
+          "id": "1:6153779676110007338",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:5096259515899216031",
+          "name": "chatId",
+          "type": 9
+        },
+        {
+          "id": "3:998232071394628643",
+          "name": "senderId",
+          "type": 6
+        },
+        {
+          "id": "4:5896000198130035342",
+          "name": "receiverId",
+          "type": 6
+        },
+        {
+          "id": "5:5246764656868370287",
+          "name": "type",
+          "type": 9
+        },
+        {
+          "id": "6:3388501212580648335",
+          "name": "message",
+          "type": 9
+        },
+        {
+          "id": "7:4458518419404106749",
+          "name": "imagePath",
+          "type": 9
+        },
+        {
+          "id": "8:7866333006207120085",
+          "name": "imageText",
+          "type": 9
+        },
+        {
+          "id": "9:4933031330570012880",
+          "name": "date",
+          "type": 9
+        },
+        {
+          "id": "10:4497092748683642063",
+          "name": "isSeen",
+          "type": 1
+        },
+        {
+          "id": "11:4415847011124497722",
+          "name": "isRead",
+          "type": 1
+        },
+        {
+          "id": "12:8325641881323584716",
+          "name": "isDownloaded",
+          "type": 1
+        },
+        {
+          "id": "13:7485629067070777527",
+          "name": "audioPath",
+          "type": 9
+        },
+        {
+          "id": "14:5487761943506443566",
+          "name": "audioDuration",
+          "type": 9
+        },
+        {
+          "id": "15:4242025309203090099",
+          "name": "audioTitle",
+          "type": 9
+        },
+        {
+          "id": "16:2252945730231037406",
+          "name": "voicePath",
+          "type": 9
+        },
+        {
+          "id": "17:4215674542787408038",
+          "name": "voiceDuration",
+          "type": 9
+        },
+        {
+          "id": "18:4244916911781440444",
+          "name": "repliedMessage",
+          "type": 1
+        },
+        {
+          "id": "19:9126601962838958944",
+          "name": "parentMessageSenderId",
+          "type": 6
+        },
+        {
+          "id": "20:1591341463365786609",
+          "name": "parentMessageType",
+          "type": 9
+        },
+        {
+          "id": "21:1866515552839086174",
+          "name": "parentText",
+          "type": 9
+        },
+        {
+          "id": "22:7874972919448692350",
+          "name": "parentVoiceDuration",
+          "type": 9
+        },
+        {
+          "id": "23:7604792210188037937",
+          "name": "parentAudioDuration",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "4:9087780132147786347",
+      "lastPropertyId": "25:3000618923159464930",
+      "name": "GroupChatStorageModel",
+      "properties": [
+        {
+          "id": "1:8297744603043531106",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:1875182783980071474",
+          "name": "groupId",
+          "type": 9
+        },
+        {
+          "id": "3:3886656383461270430",
+          "name": "chatId",
+          "type": 9
+        },
+        {
+          "id": "4:7931052875429661181",
+          "name": "senderId",
+          "type": 6
+        },
+        {
+          "id": "5:8130981539411578458",
+          "name": "senderName",
+          "type": 9
+        },
+        {
+          "id": "6:2576216531967279681",
+          "name": "messageType",
+          "type": 9
+        },
+        {
+          "id": "7:5921913683600382286",
+          "name": "textMessage",
+          "type": 9
+        },
+        {
+          "id": "8:5847368287935957206",
+          "name": "imagePath",
+          "type": 9
+        },
+        {
+          "id": "9:2763664239809137231",
+          "name": "imageText",
+          "type": 9
+        },
+        {
+          "id": "10:1022546466590444828",
+          "name": "audioPath",
+          "type": 9
+        },
+        {
+          "id": "11:5473848878481449474",
+          "name": "audioDuration",
+          "type": 9
+        },
+        {
+          "id": "12:1174015941693400451",
+          "name": "audioTitle",
+          "type": 9
+        },
+        {
+          "id": "13:3252334271204550568",
+          "name": "voicePath",
+          "type": 9
+        },
+        {
+          "id": "14:1717274017294620463",
+          "name": "voiceDuration",
+          "type": 9
+        },
+        {
+          "id": "15:8660441874589153240",
+          "name": "time",
+          "type": 9
+        },
+        {
+          "id": "16:6062392270225486992",
+          "name": "isSeen",
+          "type": 1
+        },
+        {
+          "id": "17:6102743673180927001",
+          "name": "isRead",
+          "type": 1
+        },
+        {
+          "id": "18:1527211542001764559",
+          "name": "isMediaDownloaded",
+          "type": 1
+        },
+        {
+          "id": "19:9223173413784567345",
+          "name": "repliedMessage",
+          "type": 1
+        },
+        {
+          "id": "20:1911300684094624803",
+          "name": "parentMessageSenderId",
+          "type": 6
+        },
+        {
+          "id": "21:2129262729243786350",
+          "name": "parentMessageType",
+          "type": 9
+        },
+        {
+          "id": "22:7966301913427072457",
+          "name": "parentText",
+          "type": 9
+        },
+        {
+          "id": "23:5452851288775049982",
+          "name": "parentVoiceDuration",
+          "type": 9
+        },
+        {
+          "id": "24:7481307443383660848",
+          "name": "parentAudioDuration",
+          "type": 9
+        },
+        {
+          "id": "25:3000618923159464930",
+          "name": "parentMessageSenderName",
+          "type": 9
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "4:9087780132147786347",
+  "lastIndexId": "0:0",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [
+    3928513930006810759,
+    6156447958939554316
+  ],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [
+    4943986424879201074,
+    3469193543117747787,
+    6193546582195674964,
+    516870199422949825,
+    8418501567547652626,
+    508525468969123200,
+    7539786616847142885,
+    457234336563064843,
+    6569146401856725357,
+    7715810810496872400,
+    5470335528421227343,
+    3724124310741717524,
+    9004029249623417540,
+    5287050205635262078,
+    8078993663462949339,
+    712330105994214196,
+    7446935313595837070,
+    8529683867991981163,
+    7927219538778181513,
+    4936631070076327281,
+    8232470670672765396,
+    6666766926015491063,
+    3605603351789068285,
+    1579767084531100835,
+    3988068121470180833,
+    1666253183844286847,
+    4102142300110936080,
+    6557789406400974872,
+    546554286667046961,
+    8341998251116891399,
+    4286983610811052111,
+    8544602458304442627
+  ],
+  "retiredRelationUids": [],
+  "version": 1
+}
