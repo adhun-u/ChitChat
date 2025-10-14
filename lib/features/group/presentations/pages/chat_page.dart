@@ -1356,8 +1356,8 @@ class _PopupMenuButton extends StatelessWidget {
             return [
               PopupMenuItem(
                 enabled:
-                    !(groupChatState is GroupCallIndication &&
-                        groupChatState.isInCall),
+                    (groupChatState is GroupCallIndication &&
+                        !groupChatState.isInCall),
 
                 onTap: () async {
                   await unSubscribeFromGroupCallTopic(groupId: groupId);
@@ -1422,9 +1422,7 @@ class _PopupMenuButton extends StatelessWidget {
               PopupMenuItem(
                 enabled:
                     (groupChatState is GroupCallIndication &&
-                            groupChatState.isInCall)
-                        ? false
-                        : true,
+                        !groupChatState.isInCall),
                 onTap: () async {
                   await unSubscribeFromGroupCallTopic(groupId: groupId);
                   if (!context.mounted) {

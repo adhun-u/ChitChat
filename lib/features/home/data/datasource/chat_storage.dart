@@ -312,7 +312,6 @@ class ChatStorageDB {
                 ChatStorageDBModel_.senderId.equals(currentUserId) &
                         ChatStorageDBModel_.receiverId.equals(oppositeUserId) &
                         ((ChatStorageDBModel_.type.equals("audio") |
-                            ChatStorageDBModel_.type.equals("voice") |
                             ChatStorageDBModel_.type.equals("image") &
                                 ChatStorageDBModel_.isDownloaded.equals(
                                   true,
@@ -320,7 +319,6 @@ class ChatStorageDB {
                     ChatStorageDBModel_.receiverId.equals(currentUserId) &
                         ChatStorageDBModel_.senderId.equals(oppositeUserId) &
                         ((ChatStorageDBModel_.type.equals("audio") |
-                                ChatStorageDBModel_.type.equals("voice") |
                                 ChatStorageDBModel_.type.equals("image")) &
                             ChatStorageDBModel_.isDownloaded.equals(true)),
               )

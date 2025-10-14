@@ -29,8 +29,8 @@ class CustomCupertinoButton extends StatelessWidget {
         child:
             isLoading
                 ? SizedBox(
-                  width: 25.w,
-                  child: LoadingIndicator(color: whiteColor, strokeWidth: 1.5),
+                  width: 22.w,
+                  child: LoadingIndicator(color: whiteColor, strokeWidth: 1.8),
                 )
                 : Text(
                   label,

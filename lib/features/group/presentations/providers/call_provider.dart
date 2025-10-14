@@ -8,7 +8,7 @@ import 'package:livekit_client/livekit_client.dart';
 
 class GroupCallProvider extends ChangeNotifier {
   final Room room = Room();
-  EventsListener<RoomEvent>? _eventsListener;
+  late EventsListener<RoomEvent> _eventsListener;
   bool isMuted = false;
   Map<String, RemoteParticipant> remoteParticipants = {};
   bool isCameraTurnedOff = false;
@@ -22,10 +22,10 @@ class GroupCallProvider extends ChangeNotifier {
   }) async {
     try {
       //creating a new event listener to listen whether new participant joined or removed
-      _eventsListener ??= room.createListener();
+      _eventsListener = room.createListener();
 
       //To know who is speaking currently
-      _eventsListener?.on<ActiveSpeakersChangedEvent>((event) {
+      _eventsListener.on<ActiveSpeakersChangedEvent>((event) {
         //Swaping the group members to show who spoke last
         for (var participant in event.speakers) {
           log("Remote participant identity : ${participant.identity}");
@@ -43,7 +43,8 @@ class GroupCallProvider extends ChangeNotifier {
         }
       });
       //To know if any user disconnected
-      _eventsListener?.on<ParticipantDisconnectedEvent>((event) {
+      _eventsListener.on<ParticipantDisconnectedEvent>((event) {
+        log('Participant disconnected : ${event.participant.metadata}');
         final Map<String, dynamic>? metaData =
             event.participant.metadata != null
                 ? jsonDecode(event.participant.metadata!)
@@ -60,7 +61,9 @@ class GroupCallProvider extends ChangeNotifier {
         }
       });
       //To know if any user joined
-      _eventsListener?.on<ParticipantConnectedEvent>((event) {
+      _eventsListener.on<ParticipantConnectedEvent>((event) {
+        log('Participant connected : ${event.participant.metadata}');
+
         final Map<String, dynamic>? metaData =
             event.participant.metadata != null
                 ? jsonDecode(event.participant.metadata!)
@@ -80,16 +83,17 @@ class GroupCallProvider extends ChangeNotifier {
       await room.localParticipant?.setMicrophoneEnabled(true);
       if (!isAudioCall) {
         await room.localParticipant?.setCameraEnabled(true);
-        printDebug('Camera enabled');
+        log('Camera enabled');
       } else {
-        printDebug("Its an audio call");
+        log("Its an audio call");
       }
+      log('Participants : ${room.remoteParticipants.length}');
       for (var remoteParticipant in room.remoteParticipants.values) {
         remoteParticipants[remoteParticipant.identity] = remoteParticipant;
       }
       notifyListeners();
     } catch (e) {
-      printDebug("Live kit connection error : $e");
+      log("Live kit connection error : $e");
     }
   }
 
@@ -139,7 +143,7 @@ class GroupCallProvider extends ChangeNotifier {
 
   //For disposing the resources
   void disposeResource() async {
-    await _eventsListener?.dispose();
+    await _eventsListener.dispose();
     try {
       await room.disconnect();
       await room.dispose();
